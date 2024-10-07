@@ -69,13 +69,13 @@ function criarTagLi(tarefa) {
     let btnEdit = document.createElement("button");
     btnEdit.classList.add("btn-edit");
     btnEdit.innerHTML =
-        ' <img src="images/pencil-icon.png" alt="Icone de editar tarefa" width="13px" height="13px" /> ';
+        ' <img src="assets/images/pencil-icon.png" alt="Icone de editar tarefa" width="13px" height="13px" /> ';
     btnEdit.setAttribute("onclick", "editar(" + tarefa.id + ")");
 
     let btnDelete = document.createElement("button");
     btnDelete.classList.add("btn-delete");
     btnDelete.innerHTML =
-        ' <img src="images/trash-icon.png" alt="Icone de excluir tarefa" width="13px" height="13px" /> ';
+        ' <img src="assets/images/trash-icon.png" alt="Icone de excluir tarefa" width="13px" height="13px" /> ';
     btnDelete.setAttribute("onclick", "deletar(" + tarefa.id + ")");
 
     div.appendChild(btnEdit);
