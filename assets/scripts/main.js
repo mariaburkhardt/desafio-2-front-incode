@@ -110,13 +110,13 @@ function criarTagLi(tarefa) {
 
 //criar função de editar
 function editar(idTarefa) {
-    let li = document.getElementById(idTarefa); // seleciona o item da tarefa pelo id
-    let span = li.querySelector(".textTask"); // seleciona o texto da tarefa dentro do <li>
+    let li = document.getElementById(idTarefa); //seleciona o item da tarefa pelo id
+    let span = li.querySelector(".textTask"); //seleciona o texto da tarefa dentro do li
 
-    // pergunta ao usuário o novo texto da tarefa
+    //pergunta ao usuário o novo texto da tarefa
     let novoTexto = prompt("Edite sua tarefa:", span.textContent);
 
-    // se o usuário fornece um novo texto, atualiza a tarefa
+    //se o usuário fornece um novo texto, atualiza a tarefa
     if (novoTexto !== null && novoTexto.trim() !== "") {
         span.textContent = novoTexto;
     }
@@ -125,7 +125,8 @@ function editar(idTarefa) {
 //criar função de deletar
 function deletar(idTarefa) {
     if (window.confirm("Tem certeza que deseja excluir?")) {
-        const li = document.getElementById(idTarefa);
-        if (li) tasks.removeChild(li);
+        //se for verdade
+        const li = document.getElementById(idTarefa); //vai acontecer isso
+        if (li) tasks.removeChild(li); //garante que o elemento li foi encontrado
     }
 }
