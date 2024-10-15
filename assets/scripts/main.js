@@ -70,13 +70,13 @@ function criarTagLi(tarefa) {
     btnEdit.classList.add("btn-edit");
     btnEdit.innerHTML =
         ' <img src="assets/images/pencil-icon.png" alt="Icone de editar tarefa" width="13px" height="13px" /> ';
-    btnEdit.setAttribute("onclick", "editar(" + tarefa.id + ")");
+    btnEdit.addEventListener("click", () => editar(tarefa.id));
 
     let btnDelete = document.createElement("button");
     btnDelete.classList.add("btn-delete");
     btnDelete.innerHTML =
         ' <img src="assets/images/trash-icon.png" alt="Icone de excluir tarefa" width="13px" height="13px" /> ';
-    btnDelete.setAttribute("onclick", "deletar(" + tarefa.id + ")");
+    btnDelete.addEventListener("click", () => deletar(tarefa.id));
 
     div.appendChild(btnEdit);
     div.appendChild(btnDelete);
@@ -110,13 +110,13 @@ function criarTagLi(tarefa) {
 
 //criar função de editar
 function editar(idTarefa) {
-    let li = document.getElementById(idTarefa); // Seleciona o item da tarefa pelo ID
-    let span = li.querySelector(".textTask"); // Seleciona o texto da tarefa dentro do <li>
+    let li = document.getElementById(idTarefa); // seleciona o item da tarefa pelo id
+    let span = li.querySelector(".textTask"); // seleciona o texto da tarefa dentro do <li>
 
-    // Pergunta ao usuário o novo texto da tarefa
+    // pergunta ao usuário o novo texto da tarefa
     let novoTexto = prompt("Edite sua tarefa:", span.textContent);
 
-    // Se o usuário fornecer um novo texto, atualize a tarefa
+    // se o usuário fornece um novo texto, atualiza a tarefa
     if (novoTexto !== null && novoTexto.trim() !== "") {
         span.textContent = novoTexto;
     }
@@ -126,7 +126,7 @@ function editar(idTarefa) {
 function deletar(idTarefa) {
     let confirmacao = window.confirm("Tem certeza que deseja excluir?");
     if (confirmacao) {
-        let li = document.getElementById("" + idTarefa + "");
+        let li = document.getElementById(idTarefa);
         if (li) {
             tasks.removeChild(li);
         }
