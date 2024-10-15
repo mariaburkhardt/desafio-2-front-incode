@@ -124,11 +124,8 @@ function editar(idTarefa) {
 
 //criar função de deletar
 function deletar(idTarefa) {
-    let confirmacao = window.confirm("Tem certeza que deseja excluir?");
-    if (confirmacao) {
-        let li = document.getElementById(idTarefa);
-        if (li) {
-            tasks.removeChild(li);
-        }
+    if (window.confirm("Tem certeza que deseja excluir?")) {
+        const li = document.getElementById(idTarefa);
+        if (li) tasks.removeChild(li);
     }
 }
